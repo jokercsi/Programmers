@@ -1,7 +1,9 @@
 //https://programmers.co.kr/learn/courses/30/lessons/64061 
 //크레인 인형뽑기 문제(카카오 채용 문제)
+// nxn의 배열에서 크레인으로 위에서부터 인형을 뽑는다. 이 때 뽑은 인형은 바구니에 위로 쌓는다. 같은 종류의 인형이 만나면 사라진다. 이 때 사라진 인형의 갯수를 구하는 문제
 
 
+//Stack 클래스를 이용한 풀이
 import java.util.Stack;
 
 class Solution {
@@ -15,7 +17,7 @@ class Solution {
             for(int i = 0; i < board.length; i++){
                 if(board[i][move-1] != 0){
                     if(stack.empty() == true){
-                        stack.push(board[i][move-1]);   
+                        stack.push(board[i][move-1]);  
                     }
                     else {
                         if(stack.peek() == board[i][move-1]){

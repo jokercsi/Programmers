@@ -1,5 +1,5 @@
-//https://programmers.co.kr/learn/courses/30/lessons/64061
-//크레인 인형뽑기 문제
+//https://programmers.co.kr/learn/courses/30/lessons/64061 
+//크레인 인형뽑기 문제(카카오 채용 문제)
 
 
 import java.util.Stack;

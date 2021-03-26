@@ -2,10 +2,11 @@
 //array는 사이즈를 바꿀 수 없다 
 //ArrayList can change size dynamically
 //ArrayList는 동적으로 사이즈를 바꿀 수 있다.
+import java.util.ArrayList;
 
 class Solution {
     public int[] solution(int[] numbers) {
-        int[] answer = new int[20];
+        int[] answer = {};
         int position;
         
         //have to sort numbers
@@ -40,16 +41,13 @@ class Solution {
         
         //delete ovelapped answer
         //답에서 중복을 없애면 된다.
-        
+        int tmp=0;
         for(int i : save){
             for(int j = 1 + i; j < save.size(); j++){
-                if(save[i] == save[j]){
-                    break;
-            	}   
-                else{
-                    answer[count] = save[j];
-                    System.out.println(save[j]);
+                if(save.get(i) == save.get(j)){
+               		tmp = save.get(i);  	   
                 }
+                save.remove(tmp);   
             }
         }
             

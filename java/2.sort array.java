@@ -1,3 +1,8 @@
+//array can't change size 
+//array는 사이즈를 바꿀 수 없다 
+//ArrayList can change size dynamically
+//ArrayList는 동적으로 사이즈를 바꿀 수 있다.
+
 class Solution {
     public int[] solution(int[] numbers) {
         int[] answer = new int[20];
@@ -26,22 +31,19 @@ class Solution {
         //NxN matrix
         //we just need upper triangular matrix.
         //NxN의 행렬로 생각하기. 행렬의 반 쪽 삼각형만 구하면 답을 구하게 된다.
-        int count = 0;
-        int[] save = new int[10];
+        ArrayList<Integer> save = new ArrayList<Integer>();
         for(int i = 1; i < numbers.length; i++){
             for(int j = 0; j < i; j++){
-				save[count] = numbers[i] + numbers[j];
-				count++;
+				save.add(numbers[i] + numbers[j]);
             }
         }
         
         //delete ovelapped answer
         //답에서 중복을 없애면 된다.
-     	count = 0;
-        for(int i = 0; i < save.length; i++){
-            for(int j = 1 + i; j < save.length; j++){
+        
+        for(int i : save){
+            for(int j = 1 + i; j < save.size(); j++){
                 if(save[i] == save[j]){
-                	
                     break;
             	}   
                 else{
@@ -51,8 +53,6 @@ class Solution {
             }
         }
             
-       
-        
         return answer;
     }
 }

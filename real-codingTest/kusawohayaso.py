@@ -33,10 +33,3 @@ def main(lines):
             flag = k - 1
 
     print(count)
-
-
-if __name__ == '__main__':
-    lines = []
-    for l in sys.stdin:
-        lines.append(l.rstrip('\r\n'))
-    main(lines)

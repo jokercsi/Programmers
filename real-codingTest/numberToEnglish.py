@@ -85,10 +85,3 @@ def int_to_en(num):
         if (num % b) == 0: return int_to_en(num // b) + ' billion'
         else: return int_to_en(num // b) + ' billion ' + int_to_en(num % b)
 
-
-
-if __name__ == '__main__':
-    lines = []
-    for l in sys.stdin:
-        lines.append(l.rstrip('\r\n'))
-    main(lines)

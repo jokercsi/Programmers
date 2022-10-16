@@ -1,20 +1,18 @@
 def solution(s):
-    answer = -1    
-    pivot = ""
-    lis = list(s)
+    stack = []
     
-    window = []
-    
-    while len(lis) > 1:
-        for i, char in enumerate (lis):
+    s = list(s)
 
-            if char == pivot:
-                window.append(lis.pop(i))
-                window.append(lis.pop(i-1))
-
-            pivot = char        
+    for i in s:
+        if not stack:  # 만약 stack이 비여있다면
+            stack.append(i)
+        elif stack[-1] == i:
+            stack.pop()
+            continue
+        else:
+            stack.append(i)
         
-        if len(window) == 0:
-            window.clear()
-            return 0
-    
+    if not stack:
+        return 1
+    else:
+        return 0
